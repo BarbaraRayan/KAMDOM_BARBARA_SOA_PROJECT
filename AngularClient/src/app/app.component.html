@@ -1,0 +1,48 @@
+<body>
+  <div class="host">
+    <div class="GamePage">
+      <span id="WorldImage"><img [attr.src]="server+world.logo"/></span>
+      <h1><span id="WorldName">{{world.name}}</span></h1>
+      <div class="UserData">
+        <div class="Money">
+          <div id="MoneyName">Money: {{ world.money | bigvalue }} $</div>
+        </div>
+        <button class="Buy" (click)='changeQuantity()'>
+          <span id="BuyName">Buy: {{qtmulti}}</span>
+        </button>
+        <div class="ID">
+          <span id="IDName">Username: </span>
+          <input type="text" [(ngModel)]="username" (change)="setUsername()" />
+        </div>
+      </div>
+
+
+
+      <div class="Game">
+        <div class="UpgradeContainer">
+          <button mat-raised-button id="Upgrade" (click)="modal='Unlocks'">Unlocks</button>
+          <button mat-raised-button id="Upgrade" (click)="modal='Upgrades'">Upgrades</button>
+          <button mat-raised-button id="Upgrade" (click)="modal='Angels'">Angels</button>
+          <button mat-raised-button id="Upgrade" (click)="modal='Managers'">Managers</button>
+          <button mat-raised-button id="Upgrade" (click)="modal='Investors'">Investors</button>
+
+
+          <app-manager *ngIf="modal=='Managers'" (closemodalevent)="modal=null"  [manager]="world.managers.pallier" [money]="world.money"></app-manager>
+          <app-unlock *ngIf="modal=='Unlocks'" (closemodalevent)="modal=null" [unlock]="world.allunlocks.pallier" [product]="world.products.product"></app-unlock>
+          <app-upgrade *ngIf="modal=='Upgrades'" (closemodalevent)="modal=null" [upgrade]="world.upgrades.pallier" [money]="world.money" [upgrade]="world.upgrades.pallier"></app-upgrade>
+          <app-angel *ngIf="modal=='Angels'" (closemodalevent)="modal=null" [angel]="world.angelupgrades.pallier" [money]="world.money"></app-angel>
+          <app-investor *ngIf="modal=='Investors'" (closemodalevent)="modal=null" [investor]="world.totalangels" [bonus]="world.angelbonus" [total]="world.totalangels"></app-investor>
+        </div>
+
+
+        <div class="ProductContainer">
+          <app-product *ngFor="let product of products" [prod]="product" [money]="world.money" [qtmulti]="qtmulti" [lastUpdate]="world.lastupdate" (notifyProduction)="onProductionDone($event)" (notifyPurchase)=" onPurchase($event)"></app-product>
+        </div>
+    </div>
+
+
+
+    <footer>
+      Réalisé par KAMDOM Merveille et BARBARA Rayan
+    </footer>
+  </div>

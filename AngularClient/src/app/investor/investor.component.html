@@ -1,0 +1,12 @@
+<div class="Modal" (clickOutside)="closemodal()">
+  <div><h2>Angel investors !</h2></div>
+  <div>
+      <div class="InvestitorLayout">
+        <div class="InvestorInfot">
+          <div class="InvestitorTotal">You have: {{investor | bigvalue}} angels</div>
+          <div class="InvestitorBonus">Bonus: {{bonus}} %</div>
+        </div>
+        <button mat-raised-button id="InvestorButton" (click)="claimAngel()">Restart with {{total}} angels!</button>
+      </div>
+  </div>
+</div>

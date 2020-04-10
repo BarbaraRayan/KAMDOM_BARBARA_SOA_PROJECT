@@ -1,0 +1,11 @@
+<div class="Product">
+  <div class="ProductInfo">
+    <img class="ProductImage" (click)="startFabrication()" [attr.src]="server+product?.logo">
+    <mat-progress-bar mode="determinate" class="ProgressBar" [value]="progressBarValue"></mat-progress-bar>
+    <div class="ProductRevenu" >Revenu: {{product.revenu | bigvalue}} $</div>
+    <div class="ProductPrice">Price: {{price(purchasableQuantity()) | bigvalue}} $</div>
+  </div>
+</div>
+<div class="ProductQuantity">Quantity: x{{product?.quantite}}</div>
+<button mat-raised-button id="BuyProduct" (click)="purchaseProduct()">Buy: x{{calcMaxCanBuy()}}</button>
+

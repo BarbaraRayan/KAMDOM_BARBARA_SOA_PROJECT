@@ -1,0 +1,15 @@
+<div class="Modal" (clickOutside)="closemodal()">
+  <div><h2>Want to maximize profits ? <br>Get your investments to these quotas</h2></div>
+  <div>
+    <div *ngFor="let unlock of world?.allunlocks.pallier">
+      <div *ngIf="!unlock?.unlocked" class="UnlockLayout">
+        <div class="logo"><img class="LogoImage" [attr.src]="server+unlock?.logo"></div>
+        <div class="UnlockInfo">
+          <div class="UnlockName">Name: {{unlock?.name}}</div>
+          <div class="UnlockCible">Seuil: {{unlock?.seuil}}</div>
+          <div class="UnlockBonus">Bonus: x{{unlock?.typeratio}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

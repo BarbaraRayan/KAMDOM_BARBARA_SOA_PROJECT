@@ -1,0 +1,63 @@
+:host {
+  padding: 0.5em;
+  border: 1px solid #f7b733;
+  color: white;
+  background: #2d2d2d;
+  border-radius: 10px;
+  height: 20%;
+  flex-basis: calc(50% - 2em - 5px);
+  border-radius: 7px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.747), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
+  0 1px 5px 0 rgba(0, 0, 0, 0.767);
+}
+.ProductImage{
+  margin: 0;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.ProductProgressBar{
+  display: inline;
+  position: relative;
+  bottom: 40px;
+  left: 5px;
+}
+.ProductPrice{
+  margin: 0.2em;
+  padding: 0;
+  border: 2px solid grey;
+  border-radius: 7px;
+  color: goldenrod;
+  display: flex;
+  justify-content: center;
+}
+.ProductRevenu{
+  margin: 0.2em;
+  padding: 0;
+  border: 2px solid grey;
+  border-radius: 7px;
+  color: goldenrod;
+  display: flex;
+  justify-content: center;
+}
+.ProductQuantity{
+  position: relative;
+  bottom: -10px;
+  color: goldenrod;
+  display: flex;
+  justify-content: left;
+}
+#BuyProduct{
+  position: relative;
+  bottom: 130px;
+  left: 60px;
+  background: linear-gradient(120deg, #f5c977, #d3a23f);
+  color: white;
+  text-align: center;
+  border-radius: 7px;
+  cursor: pointer;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.39), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
+  0 1px 5px 0 rgba(0, 0, 0, 0.507);
+}

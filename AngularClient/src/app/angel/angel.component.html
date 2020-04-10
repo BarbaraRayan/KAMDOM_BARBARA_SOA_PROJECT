@@ -1,0 +1,16 @@
+<div class="Modal" (clickOutside)="closemodal()">
+  <div><h2>Spend you angels wisely</h2></div>
+  <div>
+    <div *ngFor="let angelupgrades of world?.angelupgrades?.pallier">
+      <div *ngIf="!angelupgrades?.unlocked" class="AngelLayout">
+        <div class="logo"><img class="LogoImage" [attr.src]="server+angelupgrades?.logo"></div>
+        <div class="AngelInfo">
+          <div class="AngelName">Name: {{angelupgrades?.name}}</div>
+          <div class="AngelCible">Price: {{angelupgrades?.seuil | bigvalue}} angels</div>
+          <div class="AngelBonus">Ratio: {{angelupgrades?.typeratio}}</div>
+        </div>
+        <button mat-raised-button id="BuyButton" (click)="purchaseAngel(angelupgrades)" [ngClass]="{'selectable': (world?.money >= angelupgrades?.seuil)}"> Buy !</button>
+      </div>
+    </div>
+  </div>
+</div>

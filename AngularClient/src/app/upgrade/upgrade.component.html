@@ -1,0 +1,16 @@
+<div class="Modal" (clickOutside)="closemodal()">
+  <div><h2>Boost your investements!</h2></div>
+  <div>
+    <div *ngFor="let upgrade of world?.upgrades?.pallier">
+      <div *ngIf="!upgrade?.unlocked" class="UpgradeLayout">
+        <div class="logo"><img class="LogoImage" [attr.src]="server+upgrade?.logo"></div>
+        <div class="UpgradeInfo">
+          <div class="UpgradeName">Name: {{upgrade?.name}}</div>
+          <div class="UpgradeCible">Price: {{upgrade?.seuil}} $</div>
+          <div class="UpgradeBonus">Bonus: x{{upgrade?.typeratio}}</div>
+        </div>
+        <button mat-raised-button id="BuyButton" (click)="purchaseUpgrade(upgrade)" [ngClass]="{'selectable': (world?.money >= upgrade?.seuil)}"> Buy !</button>
+      </div>
+    </div>
+  </div>
+</div>

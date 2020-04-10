@@ -1,0 +1,16 @@
+<div class="Modal" (clickOutside)="closemodal()">
+  <div><h2>Managers make you feel better !</h2></div>
+  <div>
+    <div *ngFor="let manager of world?.managers.pallier">
+      <div *ngIf="!manager?.unlocked" class="ManagerLayout">
+        <div class="logo"><img class="LogoImage" [attr.src] = "server+manager?.logo"></div>
+        <div class="ManagerInfo">
+          <div class="ManagerName">Name: {{manager?.name}}</div>
+          <div class="ManagerCible">Product: {{world?.products?.product[manager?.idcible-1]?.name}}</div>
+          <div class="ManagerCost">Cost: {{manager?.seuil | bigvalue}}</div>
+        </div>
+        <button mat-raised-button id="HireButton" (click)="hireManager(manager)" [ngClass]="{'selectable': (world?.money >= manager?.seuil)}"> Hire !</button>
+      </div>
+    </div>
+  </div>
+</div>
