@@ -36,7 +36,8 @@
 
 
         <div class="ProductContainer">
-          <app-product *ngFor="let product of products" [prod]="product" [money]="world.money" [qtmulti]="qtmulti" [lastUpdate]="world.lastupdate" (notifyProduction)="onProductionDone($event)" (notifyPurchase)=" onPurchase($event)"></app-product>
+          <!-- Voir products exemple qui fonctionne a côté --><!--<app-product *ngFor="let product of products" [prod]="product" [money]="world.money" [qtmulti]="qtmulti" [lastUpdate]="world.lastupdate" (notifyProduction)="onProductionDone($event)" (notifyPurchase)=" onPurchase($event)"></app-product></div>-->
+          <app-product *ngFor="let product of world.products.product" [prod]="product" [money]="world.money" [qtmulti]="qtmulti" [lastUpdate]="world.lastupdate" (notifyProduction)="onProductionDone($event)" (notifyPurchase)=" onPurchase($event)"></app-product>
         </div>
     </div>
 

@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChildren, QueryList } from '@angular/core';
 import { Product, World } from './world';
 import { RestserviceService } from './restservice.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ProductComponent } from './product/product.component';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class AppComponent {
   products=[1,2,3,4,5,6];
+  @ViewChildren(ProductComponent) public productsComponent: QueryList<ProductComponent>;
   title = 'AngularProject';
   world: World = new World();
   server: String;
